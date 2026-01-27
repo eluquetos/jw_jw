@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Guion StageSync</title>
+    <style>
+        /* ESTILOS BASE */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: sans-serif;
+            margin: 0;
+            height: 100vh; /* Altura completa de la pantalla */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* PROHIBIDO EL SCROLL */
+        }
+
+        /* CONTENEDOR DE LA ESCENA */
+        #slide-container {
+            flex: 1; /* Ocupa todo el espacio disponible */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrado vertical */
+            align-items: flex-start;
+        }
+
+        /* TARJETA DE DIÁLOGO */
+        .slide {
+            display: none; /* Ocultas por defecto */
+            width: 100%;
+            animation: fadeIn 0.3s ease; /* Efecto suave al aparecer */
+        }
+
+        .active {
+            display: block; /* Solo la activa se ve */
+        }
+
+        /* ESTILOS DE TEXTO */
+        .dialogo-box {
+            margin-bottom: 25px;
+            padding: 10px;
+            border-left: 6px solid #555;
+            background-color: #111;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .nombre {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+
+        .texto {
+            font-size: 24px; /* LETRA GRANDE */
+            line-height: 1.4;
+        }
+
+        /* COLORES */
+        .eduardo .nombre { color: #00FFFF; } /* Cyan */
+        .eduardo .dialogo-box { border-left-color: #00FFFF; }
+        
+        .jairo .nombre { color: #FFD700; } /* Amarillo/Naranja */
+        .jairo .dialogo-box { border-left-color: #FFD700; }
+
+        .acotacion {
+            color: #AAAAAA;
+            font-style: italic;
+            font-size: 0.8em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* CONTROLES INFERIORES */
+        .controls {
+            height: 120px;
+            background-color: #222;
+            display: flex;
+            padding-bottom: env(safe-area-inset-bottom); /* Para iPhone X+ */
+        }
+
+        .btn {
+            flex: 1;
+            border: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-prev { background-color: #333; color: #888; border-right: 1px solid #444; }
+        .btn-next { background-color: #007AFF; /* Azul iPhone */ }
+        
+        .btn:active { opacity: 0.7; }
+
+        /* CONTADOR SUPERIOR */
+        .counter {
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+            padding-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter" id="counter-display">ESCENA 1</div>
+
+    <div id="slide-container">
+
+        <div class="slide active">
+            <div class="luis">
+                <div class="nombre">Luis</div>
+                <div class="dialogo-box">
+                    <div class="texto">Hola Eduardo, ¿Cómo está?</div>
+                </div>
+            </div>
+            <div class="eduardo">
+                <div class="nombre">Eduardo</div>
+                <div class="dialogo-box">
+                    <div class="texto">Hola Luis</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="luis">
+                <div class="nombre">Luis</div>
+                <div class="dialogo-box">
+                    <div class="texto">No sé si recuerda el tema de conversación que tuvimos anteriormente sobre “Si Dios se interesa por nosotros".</div>
+                </div>
+            </div>
+            <div class="eduardo">
+                <div class="nombre">Eduardo</div>
+                <div class="dialogo-box">
+                    <div class="texto"> Claro que sí, porque quería decirte algo al respecto. La verdad es que eh estado pensando en lo que hablamos.</div>
+                    <div class="texto"> Me dijiste que Dios es amor y que nos cuida, ¿verdad? Y sonó muy bonito en ese momento.</div>
+                    <div class="texto"> Pero luego veo las noticias... posibles guerras, gente pasando hambre, corrupción.</div>
+                    <div class="texto"> Y no hay que irse tan lejos. Aquí mismo, en mi actividad, veo gente que se golpea el pecho aparentando ser honesta, van a la iglesia y luego me entero de que están en negocios turbios.</div>
+                    <div class="texto"> Y si te soy honesto, Luis... yo soy un hombre práctico. Tengo deudas, mi esposa está preocupada por la salud de su mamá, y yo no veo que "orarando" se paguen las deudas o se cure mi suegra.</div>
+                    <div class="texto"> Siento que la religión, con todo respeto, es como una muleta para la gente que no quiere enfrentar la realidad. Es un consuelo psicológico, nada más..</div>
+                    <div class="texto"> Tú me hablas de un Dios que cuida, pero yo miro a mi alrededor y veo que estamos solos.</div>
+                    <div class="texto"> Si realmente Dios existiera y fuera tan bueno como dices, no permitiría que gente buena sufra tanto mientras los sinvergüenzas viven bien.</div>
+                    <div class="texto"> Así que... no sé si tiene sentido que sigamos hablando de esto, porque yo necesito soluciones reales, no promesas para el futuro.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="luis">
+                <div class="nombre">Luis</div>
+                <div class="dialogo-box">
+                    <div class="texto">Eduardo, te agradezco mucho que me hables con esa franqueza. Te escucho y noto que no solo estás frustrado por lo que ves en las noticias, sino que te preocupa genuinamente el bienestar de tu familia.</div>
+                </div>
+            </div>
+            <div class="eduardo">
+                <div class="nombre">Eduardo</div>
+                <div class="dialogo-box">
+                    <div class="texto">Así lo veo, Luis. La fe no paga las cuentas.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="luis">
+                <div class="nombre">Luis</div>
+                <div class="dialogo-box">
+                    <div class="texto">Tienes toda la razón en que necesitamos soluciones reales. De hecho, lo que mencionaste sobre los que “se golpean el pecho” pero actúan mal, es algo que a Dios también le indigna.</div>
+                    <div class="texto">Pero nota que la Biblia no ignora tu pregunta. Mira lo que dice aquí en <strong>1 Pedro 5:7</strong> sobre lo que Dios siente por ti y tu familia:</div>
+                    <div class="texto">“Mientras echan toda su ansiedad sobre él, porque él se preocupa por ustedes”</div>
+                    <div class="texto">Fíjate que no dice que Dios es indiferente. Dice que se preocupa por nosotros. La razón por la que vemos tanta maldad no es porque él no exista o no tenga poder, sino porque el mundo actual no está gobernado por él.</div>
+                </div>
+            </div>
+            <div class="eduardo">
+                <div class="nombre">Eduardo</div>
+                <div class="dialogo-box">
+                    <div class="texto">¿Cómo que no? Si él es Dios.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="luis">
+                <div class="nombre">Luis</div>
+                <div class="dialogo-box">
+                    <div class="texto">De hecho, la Biblia explica que “el mundo entero está bajo el poder del malvado”. Eso explica por qué hay tanta corrupción, y tanto sufrimiento.</div>
+                    <div class="texto">Sabe Eduardo que sus sentimientos son válidos, por qué son circunstancias causadas por las injusticias. Es más mire lo que expresa un escritor bíblico, en el <strong>Salmo 73:3</strong> </div>
+                    <div class="texto">"porque llegué a tenerles envidia a los arrogantes al ver la paz de los malvados".</div>
+                    <div class="texto">y en el 12 "Sí, así son los malvados, para quienes todo es fácil. Acumulan más y más riquezas"</div>
+
+
+                </div>
+            </div>
+            <div class="eduardo">
+                <div class="nombre">Eduardo</div>
+                <div class="dialogo-box">
+                    <div class="texto">Acá estoy de acuerdo con ese escritor.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="luis">
+                <div class="nombre">Luis</div>
+                <div class="dialogo-box">
+                    <div class="texto">Si yo también a veces siento eso, pero que le parece si la próxima semana vemos quien es el malvado que está causando mucho sufrimiento, y sobre todo analizaremos soluciones reales a nuestros problemas.</div>
+                </div>
+            </div>
+            <div class="eduardo">
+                <div class="nombre">Eduardo</div>
+                <div class="dialogo-box">
+                    <div class="texto">Me parece bien y quiero saber más de ese escritor bíblico.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="luis">
+                <div class="nombre">Luis</div>
+                <div class="dialogo-box">
+                    <div class="texto">Si por supuesto. Entonces nos vemos pronto.</div>
+                </div>
+            </div>
+            <div class="eduardo">
+                <div class="nombre">Eduardo</div>
+                <div class="dialogo-box">
+                    <div class="texto">Gracias Luis</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-prev" onclick="prevSlide()">ANTERIOR</button>
+        <button class="btn btn-next" onclick="nextSlide()">SIGUIENTE</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const counterDisplay = document.getElementById('counter-display');
+
+        function updateCounter() {
+            counterDisplay.innerText = `ESCENA ${currentSlide + 1} DE ${totalSlides}`;
+        }
+
+        function showSlide(index) {
+            // Quitar clase active de todas
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Poner clase active a la actual
+            slides[index].classList.add('active');
+            
+            updateCounter();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Inicializar
+        updateCounter();
+    </script>
+</body>
+</html>
