@@ -111,6 +111,22 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* RESPONSIVE PARA MÓVILES */
+        @media (max-width: 600px) {
+            .texto {
+                font-size: 20px; /* Reducir letra en pantallas pequeñas */
+            }
+            .dialogo-box {
+                padding: 8px; /* Menos padding */
+            }
+            .controls {
+                height: 100px; /* Altura menor para controles */
+            }
+            .btn {
+                font-size: 18px; /* Botones más pequeños */
+            }
+        }
     </style>
 </head>
 <body>
