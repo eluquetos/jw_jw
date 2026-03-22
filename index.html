@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Guion StageSync</title>
     <style>
         /* ESTILOS BASE */
@@ -11,31 +13,38 @@
             color: #ffffff;
             font-family: sans-serif;
             margin: 0;
-            height: 100vh; /* Altura completa de la pantalla */
+            height: 100vh;
+            /* Altura completa de la pantalla */
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* PROHIBIDO EL SCROLL */
+            overflow: hidden;
+            /* PROHIBIDO EL SCROLL */
         }
 
         /* CONTENEDOR DE LA ESCENA */
         #slide-container {
-            flex: 1; /* Ocupa todo el espacio disponible */
+            flex: 1;
+            /* Ocupa todo el espacio disponible */
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centrado vertical */
+            justify-content: center;
+            /* Centrado vertical */
             align-items: flex-start;
         }
 
         /* TARJETA DE DIÁLOGO */
         .slide {
-            display: none; /* Ocultas por defecto */
+            display: none;
+            /* Ocultas por defecto */
             width: 100%;
-            animation: fadeIn 0.3s ease; /* Efecto suave al aparecer */
+            animation: fadeIn 0.3s ease;
+            /* Efecto suave al aparecer */
         }
 
         .active {
-            display: block; /* Solo la activa se ve */
+            display: block;
+            /* Solo la activa se ve */
         }
 
         /* ESTILOS DE TEXTO */
@@ -56,16 +65,29 @@
         }
 
         .texto {
-            font-size: 24px; /* LETRA GRANDE */
+            font-size: 24px;
+            /* LETRA GRANDE */
             line-height: 1.4;
         }
 
         /* COLORES */
-        .Angel .nombre { color: #00FFFF; } /* Cyan */
-        .Angel .dialogo-box { border-left-color: #00FFFF; }
-        
-        .jairo .nombre { color: #FFD700; } /* Amarillo/Naranja */
-        .jairo .dialogo-box { border-left-color: #FFD700; }
+        .Angel .nombre {
+            color: #00FFFF;
+        }
+
+        /* Cyan */
+        .Angel .dialogo-box {
+            border-left-color: #00FFFF;
+        }
+
+        .jairo .nombre {
+            color: #FFD700;
+        }
+
+        /* Amarillo/Naranja */
+        .jairo .dialogo-box {
+            border-left-color: #FFD700;
+        }
 
         .acotacion {
             color: #AAAAAA;
@@ -80,7 +102,8 @@
             height: 120px;
             background-color: #222;
             display: flex;
-            padding-bottom: env(safe-area-inset-bottom); /* Para iPhone X+ */
+            padding-bottom: env(safe-area-inset-bottom);
+            /* Para iPhone X+ */
         }
 
         .btn {
@@ -94,10 +117,20 @@
             transition: background 0.2s;
         }
 
-        .btn-prev { background-color: #333; color: #888; border-right: 1px solid #444; }
-        .btn-next { background-color: #007AFF; /* Azul iPhone */ }
-        
-        .btn:active { opacity: 0.7; }
+        .btn-prev {
+            background-color: #333;
+            color: #888;
+            border-right: 1px solid #444;
+        }
+
+        .btn-next {
+            background-color: #007AFF;
+            /* Azul iPhone */
+        }
+
+        .btn:active {
+            opacity: 0.7;
+        }
 
         /* CONTADOR SUPERIOR */
         .counter {
@@ -108,27 +141,42 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* RESPONSIVE PARA MÓVILES */
         @media (max-width: 600px) {
             .texto {
-                font-size: 20px; /* Reducir letra en pantallas pequeñas */
+                font-size: 20px;
+                /* Reducir letra en pantallas pequeñas */
             }
+
             .dialogo-box {
-                padding: 8px; /* Menos padding */
+                padding: 8px;
+                /* Menos padding */
             }
+
             .controls {
-                height: 100px; /* Altura menor para controles */
+                height: 100px;
+                /* Altura menor para controles */
             }
+
             .btn {
-                font-size: 18px; /* Botones más pequeños */
+                font-size: 18px;
+                /* Botones más pequeños */
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="counter" id="counter-display">ESCENA 1</div>
@@ -139,13 +187,16 @@
             <div class="Eduardo">
                 <div class="nombre">Eduardo</div>
                 <div class="dialogo-box">
-                    <div class="texto">¡Qué gusto saludarlo, Ángel! Qué bueno encontrarlo por aquí. Cómo ha estado?. Ha podido ver la invitación a la Conmemoración de la muerte de Jesús que le envié por WhatsApp . ¿Ha tenido la oportunidad de revisar los detalles?</div>
+                    <div class="texto">¡Qué gusto saludarlo, Ángel! Qué bueno encontrarlo por aquí. Cómo ha estado?. Ha
+                        podido ver la invitación a la Conmemoración de la muerte de Jesús que le envié por WhatsApp .
+                        ¿Ha tenido la oportunidad de revisar los detalles?</div>
                 </div>
             </div>
             <div class="Angel">
                 <div class="nombre">Angel</div>
                 <div class="dialogo-box">
-                    <div class="texto">Hola Eduardo. Sí aquí la tengo. Pues verá, le soy sincero... la estuve viendo, pero me entró la duda. No sé si mismo vaya a ir, me da como recelo.</div>
+                    <div class="texto">Hola Eduardo. Sí aquí la tengo. Pues verá, le soy sincero... la estuve viendo,
+                        pero me entró la duda. No sé si mismo vaya a ir, me da como recelo.</div>
                 </div>
             </div>
         </div>
@@ -154,16 +205,23 @@
             <div class="Eduardo">
                 <div class="nombre">Eduardo</div>
                 <div class="dialogo-box">
-                    <div class="texto">Lo entiendo perfectamente. A veces uno se pone a pensar de más cuando es algo nuevo. Pero cuénteme con confianza, ¿qué es lo que le hace dudar? ¿Hay algo que no le gusta?</div>
+                    <div class="texto">Lo entiendo perfectamente. A veces uno se pone a pensar de más cuando es algo
+                        nuevo. Pero cuénteme con confianza, ¿qué es lo que le hace dudar? ¿Hay algo que no le gusta?
+                    </div>
                 </div>
             </div>
             <div class="Angel">
                 <div class="nombre">Angel</div>
                 <div class="dialogo-box">
-                    <div class="texto"> Es que verá, Eduardo, uno a veces ha tenido <span style="color: red;">malas experiencias</span>.</div>
-                    <div class="texto"> Me da verguenza que al ser nuevo me estén <span style="color: red;">mirando de arriba abajo</span></div>
-                    <div class="texto"> o que a mitad de la reunión salgan con el "<span style="color: red;">diezmo</span>" o a <span style="color: red;">pedir plata</span> para la iglesia, y la situación ahorita no está para eso.</div>
-                    <div class="texto"> Además, ni sé cómo hay que <span style="color: red;">ir vestido</span>, capaz voy así nomás y me siento <span style="color: red;">fuera de lugar</span>.</div>
+                    <div class="texto"> Es que verá, Eduardo, uno a veces ha tenido <span style="color: red;">malas
+                            experiencias</span>.</div>
+                    <div class="texto"> Me da verguenza que al ser nuevo me estén <span style="color: red;">mirando de
+                            arriba abajo</span></div>
+                    <div class="texto"> o que a mitad de la reunión salgan con el "<span
+                            style="color: red;">diezmo</span>" o a <span style="color: red;">pedir dinero</span> para la
+                        iglesia, y la situación ahorita no está para eso.</div>
+                    <div class="texto"> Además, ni sé cómo hay que <span style="color: red;">ir vestido</span>, capaz
+                        voy así nomás y me siento <span style="color: red;">fuera de lugar</span>.</div>
                 </div>
             </div>
         </div>
@@ -172,7 +230,8 @@
             <div class="Eduardo">
                 <div class="nombre">Eduardo</div>
                 <div class="dialogo-box">
-                    <div class="texto">Claro, Ángel, lo comprendo plenamente. O sea, le preocupa que le pidan plata o que lo hagan sentir mal por no saber cómo presentarse o cómo actuar, ¿verdad?</div>
+                    <div class="texto">Claro, Ángel, lo comprendo plenamente. O sea, le preocupa que le pidan dinero o
+                        que lo hagan sentir mal por no saber cómo presentarse o cómo actuar, ¿verdad?</div>
                 </div>
             </div>
             <div class="Angel">
@@ -188,8 +247,10 @@
                 <div class="nombre">Eduardo</div>
                 <div class="dialogo-box">
                     <div class="texto">Me alegra que me lo diga para poder aclararlo.</div>
-                    <div class="texto">Mire, para que se quede tranquilo: en nuestras reuniones no se pide plata. Jamás va a ver a alguien pasando una canastita o pidiendo cuotas.</div>
-                    <div class="texto">La entrada es gratis porque lo que queremos es compartir lo que dice la Biblia, no sacarle nada a nadie.</div>
+                    <div class="texto">Mire, para que se quede tranquilo: en nuestras reuniones no se pide dinero. Jamás
+                        va a ver a alguien pasando una canastita o pidiendo cuotas.</div>
+                    <div class="texto">La entrada es gratis porque lo que queremos es compartir lo que dice la Biblia,
+                        no sacarle nada a nadie.</div>
                 </div>
             </div>
             <div class="Angel">
@@ -204,8 +265,11 @@
             <div class="Eduardo">
                 <div class="nombre">Eduardo</div>
                 <div class="dialogo-box">
-                    <div class="texto">Y en cuanto a la vestimenta o lo que debe hacer, quédese tranquilo. No exigimos ninguna prenda en particular; con que vaya con ropa sencilla y respetable es suficiente.</div>
-                    <div class="texto">La reunión es un acto muy digno. Empezamos con un cántico y una oración, y luego un conferenciante explicará con la Biblia por qué es tan importante para nosotros el sacrificio de Jesús.</div>
+                    <div class="texto">Y en cuanto a la vestimenta o lo que debe hacer, quédese tranquilo. No exigimos
+                        ninguna prenda en particular; con que vaya con ropa sencilla y respetable es suficiente.</div>
+                    <div class="texto">La reunión es un acto muy digno. Empezamos con un cántico y una oración, y luego
+                        un conferenciante explicará con la Biblia por qué es tan importante para nosotros el sacrificio
+                        de Jesús.</div>
                     <div class="texto">Verá que es un ambiente de mucha paz y orden.</div>
                 </div>
             </div>
@@ -221,16 +285,21 @@
             <div class="Eduardo">
                 <div class="nombre">Eduardo</div>
                 <div class="dialogo-box">
-                    <div class="texto">¡Así es. Es una conferencia educativa. Durante la reunión se pasarán un pan y un vino, tal como Jesús lo hizo en su última cena, pero se hace de forma muy ordenada y solo como una muestra de respeto a su mandato.</div>
-                    <div class="texto">Nadie lo va a obligar a participar de los emblemas ni a decir nada. Usted será un invitado de honor. ¿Qué le parece si el día anterior le envío un recordatorio con la ubicación exacta por si acaso se le dificulte llegar?</div>
+                    <div class="texto">¡Así es. Es una conferencia educativa. Durante la reunión se pasarán un pan y un
+                        vino, tal como Jesús lo hizo en su última cena, pero se hace de forma muy ordenada y solo como
+                        una muestra de respeto a su mandato.</div>
+                    <div class="texto">Nadie lo va a obligar a participar de los emblemas ni a decir nada. Usted será un
+                        invitado de honor. ¿Qué le parece si el día anterior le envío un recordatorio con la ubicación
+                        exacta por si acaso se le dificulte llegar?</div>
                 </div>
             </div>
             <div class="Angel">
                 <div class="nombre">Angel</div>
                 <div class="dialogo-box">
-                    <div class="texto">Bueno, si es así como usted me cuenta, ya me da más confianza. Ya no suena tan complicado el asunto.</div>
+                    <div class="texto">Bueno, si es así como usted me cuenta, ya me da más confianza. Ya no suena tan
+                        complicado el asunto.</div>
                 </div>
-            </div>        
+            </div>
         </div>
 
 
@@ -239,7 +308,9 @@
             <div class="Eduardo">
                 <div class="nombre">Eduardo</div>
                 <div class="dialogo-box">
-                    <div class="texto">Qué buena noticia, Ángel. Será un verdadero honor para mí saludarlo ese día. Si gusta, puedo esperarlo unos minutos antes en la entrada para que entremos juntos. ¿Le parece bien?</div>
+                    <div class="texto">Qué buena noticia, Ángel. Será un verdadero honor para mí saludarlo ese día. Si
+                        gusta, puedo esperarlo unos minutos antes en la entrada para que entremos juntos. ¿Le parece
+                        bien?</div>
                 </div>
             </div>
             <div class="Angel">
@@ -276,10 +347,10 @@
         function showSlide(index) {
             // Quitar clase active de todas
             slides.forEach(slide => slide.classList.remove('active'));
-            
+
             // Poner clase active a la actual
             slides[index].classList.add('active');
-            
+
             updateCounter();
         }
 
@@ -301,4 +372,5 @@
         updateCounter();
     </script>
 </body>
+
 </html>
